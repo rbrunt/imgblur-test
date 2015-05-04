@@ -1,0 +1,17 @@
+.padder {
+	height:200vh;
+	width:100%;
+	margin:0;
+	padding:0;
+}
+svg {
+	display:none;
+}
+img.blurimg{
+/*	filter:url(#blur);*/
+	display: block;
+	margin:0 auto;
+	top:0;
+	max-width: 80%;
+	max-height:80vh;
+}
