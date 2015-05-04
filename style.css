@@ -1,17 +1,23 @@
 .padder {
-	height:200vh;
+	height:500vh;
 	width:100%;
 	margin:0;
 	padding:0;
 }
-svg {
-	display:none;
+
+svg,.hidden {
+	position: absolute;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	pointer-events: none;
 }
 img.blurimg{
-/*	filter:url(#blur);*/
-	display: block;
-	margin:0 auto;
+	-webkit-filter: url("#blur");
+	filter: url(".#blur");
+	position:fixed;
 	top:0;
+	right:25vw;
 	max-width: 80%;
 	max-height:80vh;
 }

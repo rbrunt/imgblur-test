@@ -2,17 +2,30 @@
 	<head>
 		<title>ImageBlur Test</title>
 		<link rel="stylesheet" href="style.css">
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	</head>
 	<body>
 		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="filters">
 			<defs>
 				<filter id="blur">
-					<feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+					<feGaussianBlur in="SourceGraphic" stdDeviation="0" />
 				</filter>
 			</defs>
 		</svg>
 		<div class="padder">
 			<img class="blurimg" src="https://download.unsplash.com/photo-1430651717504-ebb9e3e6795e" alt="Picture">
 		</div>
+		<script>
+			blur = document.querySelector(".filters>defs>#blur").firstElementChild;
+			function setblur(bluramount) {
+				blur.setAttribute("stdDeviation",bluramount);
+			}
+			
+			window.addEventListener("scroll", function(e){
+				offset = window.pageYOffset;
+				setblur(offset/100);
+			},false);
+		</script>
+		
 	</body>
 </html>
